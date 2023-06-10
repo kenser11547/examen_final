@@ -1,12 +1,9 @@
 <?php
-require_once '../../modelos/Cita.php';
 require_once '../../modelos/Paciente.php';
 require_once '../../modelos/Medico.php';
     try {
-        $cita = new Cita();
         $paciente = new Paciente();
         $medico = new Medico();
-        $citas = $cita->buscar();
         $pacientes = $paciente->buscar();
         $medicos = $medico->buscar();
             // var_dump($clientes);
