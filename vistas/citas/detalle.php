@@ -11,8 +11,8 @@ require '../../modelos/Paciente.php';
             'paciente_nombre' => $id
         ]);
 
-        $citas = $venta->buscar();
-        $pacientes = $detalle->buscar();
+        $citas = $cita->buscar();
+        $pacientes = $paciente->buscar();
         // echo "<pre>";
         // var_dump($ventas);
         // echo "</pre>";
