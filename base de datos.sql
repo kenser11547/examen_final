@@ -14,6 +14,7 @@ create table pacientes(
     paciente_id serial not null,
     paciente_nombre varchar(50) not null,
     paciente_nit varchar(15) not null,
+    paciente_telefono varchar(15) not null,
     paciente_situacion smallint not null default 1,
     primary key (paciente_id)
 )

@@ -49,13 +49,13 @@ try {
                         <?php if(count($medicos) > 0):?>
                         <?php foreach($medicos as $key => $medico) : ?>
                             <?php
-                            // Obtener la especialidad del médico
+ tr>                           // Obtener la especialidad del médico
                             $especialidad = $especialidades[$key];
         
                             // Obtener la clínica del médico
                             $clinica = $clinicas[$key];
                             ?>
-                        <tr>
+                        <
                             <td><?= $key + 1 ?></td>
                             <td><?= $medico['MEDICO_NOMBRE'] ?></td>
                             <td><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></td>

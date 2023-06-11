@@ -33,6 +33,17 @@ require_once '../../modelos/Medico.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
+                        <label for="cita_medico">Asignar Medico</label>
+                        <select name="cita_medico" id="cita_medico" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($medicos as $key => $medico) : ?>
+                                <option value="<?= $medico['MEDICO_ID'] ?>"><?= $paciente['MEDICO_NOMBRE'] ?></option>
+                            <?php endforeach?>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
                         <label for="cita_fecha">Fecha de la venta</label>
                         <input type="datetime-local" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
                     </div>
