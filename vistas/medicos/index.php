@@ -1,3 +1,19 @@
+<?php
+require_once '../../modelos/Especialidad.php';
+require_once '../../modelos/Clinica.php';
+    try {
+        $especialidad = new Especialidad();
+        $clinica = new Clinica();
+        $especialidades = $especialidad->buscar();
+        $clinicas = $clinica->buscar();
+            // var_dump($clientes);
+            // exit;
+    } catch (PDOException $e) {
+        $error = $e->getMessage();
+    } catch (Exception $e2){
+        $error = $e2->getMessage();
+    }
+?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
@@ -13,13 +29,23 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_especialidad">Especialidad</label>
-                        <input type="number" name="medico_especialidad" id="medico_especialidad" class="form-control">
+                        <select name="medico_especialidad" id="medico_especialidad" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($especialidades as $key => $especialidad) : ?>
+                                <option value="<?= $especialidad['ESPECIALIDAD_ID'] ?>"><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></option>
+                            <?php endforeach?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_clinica">Clinica</label>
-                        <input type="number" name="medico_clinica" id="medico_clinica" class="form-control">
+                        <select name="medico_clinica" id="medico_clinica" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($clinicas as $key => $clinica) : ?>
+                                <option value="<?= $clinica['CLINICA_ID'] ?>"><?= $clinica['CLINICA_NOMBRE'] ?></option>
+                            <?php endforeach?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">

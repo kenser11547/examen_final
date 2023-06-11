@@ -1,9 +1,14 @@
 <?php
 require '../../modelos/Medico.php';
+require_once '../../modelos/Especialidad.php';
+require_once '../../modelos/Clinica.php';
 try {
     $medico = new Medico($_GET);
-    
+    $especialidad = new Especialidad();
+    $clinica = new Clinica();
     $medicos = $medico->buscar();
+    $especialidades = $especialidad->buscar();
+    $clinicas = $clinica->buscar();
     // echo "<pre>";
     // var_dump($clientes);
     // echo "</pre>";
@@ -43,11 +48,18 @@ try {
                     <tbody>
                         <?php if(count($medicos) > 0):?>
                         <?php foreach($medicos as $key => $medico) : ?>
+                            <?php
+                            // Obtener la especialidad del médico
+                            $especialidad = $especialidades[$key];
+        
+                            // Obtener la clínica del médico
+                            $clinica = $clinicas[$key];
+                            ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $medico['MEDICO_NOMBRE'] ?></td>
-                            <td><?= $medico['MEDICO_ESPECIALIDAD'] ?></td>
-                            <td><?= $medico['MEDICO_CLINICA'] ?></td>
+                            <td><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></td>
+                            <td><?= $clinica['CLINICA_NOMBRE'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_caaljuc/vistas/medicos/modificar.php?medico_id=<?= $medico['MEDICO_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/medicos/eliminar.php?medico_id=<?= $medico['MEDICO_ID']?>">Eliminar</a></td>
                         </tr>
