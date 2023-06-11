@@ -9,7 +9,7 @@ require_once '../../modelos/Medico.php';
         $medico = new Medico();
         $pacientes = $paciente->buscar();
         $medicos = $medico->buscar();
-            // var_dump($clientes);
+            // var_dump($);
             // exit;
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -36,7 +36,7 @@ require_once '../../modelos/Medico.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cita_medico">Asignar Medico</label>
+                        <label for="cita_medico">Medico</label>
                         <select name="cita_medico" id="cita_medico" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($medicos as $key => $medico) : ?>
@@ -54,15 +54,15 @@ require_once '../../modelos/Medico.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cita_hora">Horario</label>
-                        <input type="datetime" value="<?= date('H:i') ?>" name="cita_hora" id="cita_hora" class="form-control">
+                        <input type="datetime" value="<?= datetime('H:i') ?>" name="cita_hora" id="cita_hora" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cita_referencia">¿Tiene referencia? </label>
                         <select name="cita_referencia" id="cita_referencia" class="form-control">
-                            <option value="si">Sí</option>
-                            <option value="no">No</option>
+                            <option value="si">si</option>
+                            <option value="no">no</option>
                         </select>
                     </div>
                 </div>
