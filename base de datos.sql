@@ -2,20 +2,20 @@ create table especialidades(
     especialidad_id serial not null,
     especialidad_nombre varchar(50) not null,
     especialidad_situacion smallint not null default 1,
-    primary key (producto_id)
+    primary key (especialidad_id)
 )
 create table clinicas(
     clinica_id serial not null,
     clinica_nombre varchar(50) not null,
     clinica_situacion smallint not null default 1,
-    primary key (producto_id)
+    primary key (clinica_id)
 )
 create table pacientes(
     paciente_id serial not null,
     paciente_nombre varchar(50) not null,
     paciente_nit varchar(15) not null,
     paciente_situacion smallint not null default 1,
-    primary key (producto_id)
+    primary key (paciente_id)
 )
 create table medicos(
     medico_id serial not null,
