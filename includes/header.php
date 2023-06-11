@@ -12,6 +12,6 @@
 
         }
     </style>
-    <title>App de Tienda</title>
+    <title>HOSPITAL "ESPERANZA"</title>
 </head>
 <body>
