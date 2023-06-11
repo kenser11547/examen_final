@@ -2,7 +2,7 @@
 require '../../modelos/Paciente.php';
 
 
-if($_POST['paciente_nombre'] != '' && $_POST['paciente_nit'] != ''){
+if($_POST['paciente_nombre'] != '' && $_POST['paciente_dpi'] != '' && $_POST['paciente_telefono'] != ''){
 
 
 

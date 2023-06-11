@@ -12,8 +12,14 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="paciente_nit">Nit del paciente</label>
-                        <input type="text" name="paciente_nit" id="paciente_nit" class="form-control">
+                        <label for="paciente_dpi">No. de DPI</label>
+                        <input type="text" name="paciente_dpi" id="paciente_dpi" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="paciente_telefono">No. de telefono</label>
+                        <input type="text" name="paciente_telefono" id="paciente_telefono" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

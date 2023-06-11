@@ -34,7 +34,8 @@ try {
                         <tr>
                             <th>NO. </th>
                             <th>NOMBRE</th>
-                            <th>NIT</th>
+                            <th>DPI</th>
+                            <th>TELEFONO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -45,7 +46,8 @@ try {
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $paciente['PACIENTE_NOMBRE'] ?></td>
-                            <td><?= $paciente['PACIENTE_NIT'] ?></td>
+                            <td><?= $paciente['PACIENTE_DPI'] ?></td>
+                            <td><?= $paciente['PACIENTE_TELEFONO'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_caaljuc/vistas/pacientes/modificar.php?paciente_id=<?= $paciente['PACIENTE_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/pacientes/eliminar.php?paciente_id=<?= $paciente['PACIENTE_ID']?>">Eliminar</a></td>
                         </tr>
