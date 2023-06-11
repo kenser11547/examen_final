@@ -7,7 +7,7 @@ class Cita extends Conexion{
     public $cita_medico;
     public $cita_fecha;
     public $cita_hora;
-    public $cita_refencia;
+    public $cita_referencia;
     public $cita_situacion;
 
 
