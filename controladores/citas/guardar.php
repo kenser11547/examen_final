@@ -1,3 +1,5 @@
+
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -55,10 +57,9 @@ if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
 </body>
 </html>
-
