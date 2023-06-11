@@ -2,22 +2,16 @@
 require '../../modelos/Clinica.php';
 
 
-if($_POST['clinica_nombre'] != ''){
-
-
-
     try {
-        $clinica = new Clinica($_POST);
-        $resultado = $clinica->guardar();
-        $error = "NO se guardó correctamente";
+        $clinica = new Clinica($_GET);
+        $resultado = $clinica->eliminar();
+
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
-}else{
-    $error = "Debe llenar todos los datos";
-}
+
 
 
 // if($resultado){
@@ -42,7 +36,7 @@ if($_POST['clinica_nombre'] != ''){
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Guardado exitosamente!
+                        Eliminado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
@@ -54,7 +48,7 @@ if($_POST['clinica_nombre'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/vistas/clinicas/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/controladores/clinicas/buscar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
