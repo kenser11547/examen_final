@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once '../../modelos/Paciente.php';
 require_once '../../modelos/Medico.php';
     try {
@@ -37,94 +40,33 @@ require_once '../../modelos/Medico.php';
                         <select name="cita_medico" id="cita_medico" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($medicos as $key => $medico) : ?>
-                                <option value="<?= $medico['MEDICO_ID'] ?>"><?= $paciente['MEDICO_NOMBRE'] ?></option>
+                                <option value="<?= $medico['MEDICO_ID'] ?>"><?= $medico['MEDICO_NOMBRE'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cita_fecha">Fecha de la venta</label>
-                        <input type="datetime-local" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
+                        <label for="cita_fecha">Fecha de la cita</label>
+                        <input type="date" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="cita_hora">Horario</label>
+                        <input type="datetime" value="<?= date('H:i') ?>" name="cita_hora" id="cita_hora" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="cita_referencia">¿Tiene referencia? </label>
+                        <select name="cita_referencia" id="cita_referencia" class="form-control">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
                     </div>
                 </div>
                 <hr>
-                <h2>Detalle de cita</h2>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="cita1">cita 1</label>
-                        <select name="citas[]" id="cita1" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($citas as $key => $cita) : ?>
-                                <option value="<?= $p['CITA_ID'] ?>"><?= $cita['CITA_PACIENTE'] . " - " . $cita['CITA_MEDICO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="cantidad1">Cantidad 1</label>
-                        <input type="number" name="cantidades[]" id="cantidad1" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="producto2">Producto 2</label>
-                        <select name="productos[]" id="producto2" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($productos as $key => $producto) : ?>
-                                <option value="<?= $producto['PRODUCTO_ID'] ?>"><?= $producto['PRODUCTO_NOMBRE'] . " - " . $producto['PRODUCTO_PRECIO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="cantidad2">Cantidad 2</label>
-                        <input type="number" name="cantidades[]" id="cantidad2" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="producto3">Producto 3</label>
-                        <select name="productos[]" id="producto3" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($productos as $key => $producto) : ?>
-                                <option value="<?= $producto['PRODUCTO_ID'] ?>"><?= $producto['PRODUCTO_NOMBRE'] . " - " . $producto['PRODUCTO_PRECIO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="cantidad3">Cantidad 3</label>
-                        <input type="number" name="cantidades[]" id="cantidad3" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="producto4">Producto 4</label>
-                        <select name="productos[]" id="producto4" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($productos as $key => $producto) : ?>
-                                <option value="<?= $producto['PRODUCTO_ID'] ?>"><?= $producto['PRODUCTO_NOMBRE'] . " - " . $producto['PRODUCTO_PRECIO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="cantidad4">Cantidad 4</label>
-                        <input type="number" name="cantidades[]" id="cantidad4" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="producto5">Producto 5</label>
-                        <select name="productos[]" id="producto5" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($productos as $key => $producto) : ?>
-                                <option value="<?= $producto['PRODUCTO_ID'] ?>"><?= $producto['PRODUCTO_NOMBRE'] . " - " . $producto['PRODUCTO_PRECIO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="cantidad5">Cantidad 5</label>
-                        <input type="number" name="cantidades[]" id="cantidad5" class="form-control">
-                    </div>
-                </div>
                 <div class="row mb-3">
                     <div class="col">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>

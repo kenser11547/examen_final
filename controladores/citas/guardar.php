@@ -1,39 +1,23 @@
 <?php
-require_once '../../modelos/Cita.php';
-require_once '../../modelos/Detalle.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require '../../modelos/Cita.php';
 
-$pacientes = array_filter($_POST['pacientes']);
-$medicos = array_filter($_POST['medicos']);
-$_POST['cita_fecha'] = str_replace('T',' ', $_POST['cita_fecha']);
-if($_POST['cita_paciente'] != '' && $_POST['cita_fecha'] != '' && count($pacientes)>0 && count($medicos)>0){
 
-    
-
+if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_fecha'] != '' && $_POST['cita_hora'] != '' && $_POST['cita_referencia'] != ''){
 
     try {
         $cita = new Cita($_POST);
         $resultado = $cita->guardar();
-        $idInsertado = $resultado['id'];
-        $i = 0;
-        foreach ($pacientes as $key => $paciente) {
-            $detalle = new Detalle([
-                'detalle_cita' => $idInsertado,
-                'detalle_paciente' => $paciente,
-                'detalle_medico' => $medicos[$i]
-            ]);
-            $detalle->guardar();
-            $i++;
-
-        }
-
-        
+        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
 }else{
-    $error = "Debe llenar todos los datos y seleccionar al menos un producto";
+    $error = "Debe llenar todos los datos";
 }
 
 
@@ -71,7 +55,7 @@ if($_POST['cita_paciente'] != '' && $_POST['cita_fecha'] != '' && count($pacient
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/vistas/ventas/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

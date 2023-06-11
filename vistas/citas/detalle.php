@@ -3,16 +3,19 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Cita.php';
-require '../../modelos/Paciente.php';
+require '../../modelos/Detalle.php';
+require '../../modelos/Medico.php';
     try {
         $id = $_GET['cita_id'];
         $cita = new Cita($_GET);
-        $paciente = new Paciente([
-            'paciente_nombre' => $id
+        $medico = new Medico($_GET);
+        $detalle = new Detalle([
+            'detalle_cita' => $id
         ]);
 
         $citas = $cita->buscar();
-        $pacientes = $paciente->buscar();
+        $pacientes = $detalle->buscar();
+        $medicos = $medico->buscar();
         // echo "<pre>";
         // var_dump($ventas);
         // echo "</pre>";
@@ -20,8 +23,8 @@ require '../../modelos/Paciente.php';
         // var_dump($productos);
         // echo "</pre>";
         // echo strlen($ventas[0]['CLIENTE_NIT']) - 2;
-        $subtotal = 0;
-        $cantidades = 0;
+        //$subtotal = 0;
+        //$cantidades = 0;
         // exit;
         // $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
@@ -42,35 +45,28 @@ require '../../modelos/Paciente.php';
                     </thead>
                     <tbody>
                         <tr>
-                            <td>FECHA:</td>
-                            <td colspan="4"><?= date('d/m/Y' , strtotime( $citas[0]['CITA_FECHA'])) ?></td>
+                            <td colspan="4">CITAS PARA EL DIA DE HOY <?= date('d/m/Y' , strtotime( $citas[0]['CITA_FECHA'])) ?></td>
                         </tr>
                         <tr>
-                            <td>NOMBRE:</td>
-                            <td colspan="4"><?= $pacientes[0]['PACIENTE_NOMBRE'] ?></td>
+                            <td><?= $medicos[0]['MEDICO_CLINICA'] ?><?= $citas[0]['CITA_MEDICO'] ?></td>
                         </tr>
                         <tr>
-                            <td>NIT:</td>
-                            <td colspan="4"><?= substr_replace($citas[0]['CITA_PACIENTE'], '-', strlen($citas[0]['CITA_NOMBRE']) - 1, 0 )?></td>
-                        </tr>
-                        <tr class="text-center table-dark" >
-                            <th colspan="5">CLINICA</th>
-                        </tr>
                         <tr>
                             <th>NO.</th>
-                            <th>PRODUCTO</th>
-                            <th>PRECIO</th>
-                            <th>CANTIDAD</th>
-                            <th>SUBTOTAL</th>
+                            <th>PACIENTE</th>
+                            <th>DPI</th>
+                            <th>TELEFONO</th>
+                            <th>HORA DE LA CITA</th>
+                            <th>REFERIDO SI/NO</th>
                         </tr>
-                        <?php if(count($productos) > 0):?>
+                        <?php if(count($pacientes) > 0):?>
 
-                        <?php foreach($productos as $key => $producto) : ?>
+                        <?php foreach($pacientes as $key => $paciente) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $producto['PRODUCTO_NOMBRE'] ?></td>
-                            <td><?= $producto['PRODUCTO_PRECIO'] ?></td>
-                            <td><?= $producto['CANTIDAD'] ?></td>
+                            <td><?= $paciente['PACIENTE_NOMBRE'] ?></td>
+                            <td><?= $paciente['PACIENTE_DPI'] ?></td>
+                            <td><?= $paciente['PACIENTE_TELEFONO'] ?></td>
                             <td>Q. <?= $producto['TOTAL'] ?></td>
                             <?php $subtotal += $producto['TOTAL'] ?>
                             <?php $cantidades += $producto['CANTIDAD'] ?>
