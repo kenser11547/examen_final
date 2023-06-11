@@ -21,7 +21,7 @@
                             <a class="nav-link" href="/final_caaljuc/vistas/citas/buscar.php">Buscar citas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_caaljuc/vistas/citas/detalle.php">Buscar citas</a>
+                            <a class="nav-link" href="/final_caaljuc/vistas/citas/detalle.php">Detalle citas</a>
                         </li>
                     </ul>
                 </li>
