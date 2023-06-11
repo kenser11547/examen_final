@@ -8,7 +8,7 @@ class Especialidad extends Conexion{
 
     public function __construct($args = [] )
     {
-        $this->especialidad_id = $args['producto_id'] ?? null;
+        $this->especialidad_id = $args['especialidad_id'] ?? null;
         $this->especialidad_nombre = $args['especialidad_nombre'] ?? '';
         $this->especialidad_situacion = $args['especialidad_situacion'] ?? '';
     }

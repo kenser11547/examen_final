@@ -8,7 +8,7 @@ class Clinica extends Conexion{
 
     public function __construct($args = [] )
     {
-        $this->clinica_id = $args['producto_id'] ?? null;
+        $this->clinica_id = $args['clinica_id'] ?? null;
         $this->clinica_nombre = $args['clinica_nombre'] ?? '';
         $this->clinica_situacion = $args['clinica_situacion'] ?? '';
     }

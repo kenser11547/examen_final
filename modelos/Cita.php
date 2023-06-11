@@ -27,7 +27,12 @@ class Cita extends Conexion{
         }
     
         // Resto de métodos de la clase Cita...
-
+    public function buscarPorFecha()
+        {
+            $sql = "SELECT * FROM citas WHERE DATE(cita_fecha) = '$this->cita_fecha' AND cita_situacion = 1";
+            $resultado = self::servir($sql);
+            return $resultado;
+        }    
     public function guardar(){
         $sql = "INSERT INTO citas(cita_paciente, cita_medico, cita_fecha, cita_hora, cita_referencia) values('$this->cita_paciente','$this->cita_medico','$this->cita_fecha','$this->cita_hora','$this->cita_referencia')";
         $resultado = self::ejecutar($sql);
