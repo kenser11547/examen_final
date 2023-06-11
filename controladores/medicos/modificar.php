@@ -1,12 +1,12 @@
 <?php
-require '../../modelos/Paciente.php';
+require '../../modelos/Medico.php';
 
 
-if($_POST['paciente_nombre'] != '' && $_POST['paciente_nit']  != '' && $_POST['paciente_id'] != ''){
+if($_POST['medico_nombre'] != '' && $_POST['medico_especialidad']  != '' && $_POST['medico_clinica']  != '' && $_POST['medico_id'] != ''){
 
     try {
-        $paciente = new Paciente($_POST);
-        $resultado = $paciente->modificar();
+        $medico = new Medico($_POST);
+        $resultado = $medico->modificar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -52,7 +52,7 @@ if($_POST['paciente_nombre'] != '' && $_POST['paciente_nit']  != '' && $_POST['p
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/controladores/pacientes/buscar.php?paciente_nombre=<?= $_POST['paciente_nombre'] ?>" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/controladores/medicos/buscar.php?medico_nombre=<?= $_POST['medico_nombre'] ?>" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
