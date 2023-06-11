@@ -51,6 +51,32 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Clinicas
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/clinicas/index.php">Ingresar clinica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/clinicas/buscar.php">Buscar clinica</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Especialidades
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/especialidades/index.php">Ingresar especialidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/especialidades/buscar.php">Buscar especialidad</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
