@@ -4,38 +4,53 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Tienda virtual</a>
+            <a class="navbar-brand" href="#">Hospital La Esperanza</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Hospital</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Ventas
+                        Citas
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_caaljuc/vistas/ventas/index.php">Ingresar venta</a>
+                            <a class="nav-link" href="/final_caaljuc/vistas/citas/index.php">Ingresar citas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_caaljuc/vistas/ventas/buscar.php">Buscar venta</a>
+                            <a class="nav-link" href="/final_caaljuc/vistas/citas/buscar.php">Buscar citas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/citas/detalle.php">Buscar citas</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Productos
+                        Pacientes
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_caaljuc/vistas/productos/index.php">Crear producto</a>
+                            <a class="nav-link" href="/final_caaljuc/vistas/pacientes/index.php">Ingresar paciente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_caaljuc/vistas/productos/buscar.php">Buscar producto</a>
+                            <a class="nav-link" href="/final_caaljuc/vistas/pacientes/buscar.php">Buscar paciente</a>
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Medicos
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/medicos/index.php">Ingresar medico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/final_caaljuc/vistas/medicos/buscar.php">Buscar medico</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
