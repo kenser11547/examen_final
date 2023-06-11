@@ -29,9 +29,6 @@ class Receta extends Conexion{
             $sql .= " and receta_cita = $this->receta_cita ";
         }
 
-        if($this->receta_medicamentos != ''){
-            $sql .= " and extend(receta_medicamentos) = '$this->receta_medicamentos' ";
-        }
         if($this->receta_id != null){
             $sql .= " and receta_id = $this->receta_id ";
         }

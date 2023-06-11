@@ -17,25 +17,25 @@ class Diagnostico extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO diagnosticos(diagnostico_cita, diagnostico_descripcion) values('$this->diagnostico_cita','$this->diagnostico_descripcion')";
+        $sql = "INSERT INTO diagnosticos(diagnostico_cita, diagnotico_descripcion) values('$this->diagnostico_cita','$this->diagnotico_descripcion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT descripcion_nombre, descripcion_precio as fecha, descripcion_precio  * sum (diagnostico_fecha) as total  FROM diagnostico_citas inner join descripcions on diagnostico_descripcion = producto_id where diagnostico_situacion = 1 ";
+        $sql = "SELECT * from diagnosticos inner join citas on diagnostico_cita = cita_id where diagnpstico_situacion = 1 ";
 
         if($this->diagnostico_cita != ''){
             $sql .= " and diagnostico_cita = $this->diagnostico_cita ";
         }
 
-        $sql .= " group by cita_id, clinica_nombre";
-
-
-        // echo $sql;
-        // exit;
+        if($this->diagnostico_id != null){
+            $sql .= " and diagnostico_id = $this->diagnostico_id ";
+        }
+        
 
         $resultado = self::servir($sql);
         return $resultado;
     }
+
 }
