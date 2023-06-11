@@ -1,5 +1,4 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -12,6 +11,11 @@ if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_
 
     try {
         $cita = new Cita($_POST);
+                // Formatear la fecha y hora en el formato correcto
+                $cita_fecha = date('Y-m-d H:i', strtotime($_POST['cita_fecha']));
+
+                // Asignar el valor formateado al campo cita_fecha
+                $cita->setCitaFecha($cita_fecha);
         $resultado = $cita->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {

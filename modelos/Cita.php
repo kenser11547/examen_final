@@ -22,6 +22,12 @@ class Cita extends Conexion{
         $this->cita_situacion = $args['cita_situacion'] ?? '';
     }
 
+        public function setCitaFecha($fecha) {
+            $this->cita_fecha = $fecha;
+        }
+    
+        // Resto de métodos de la clase Cita...
+
     public function guardar(){
         $sql = "INSERT INTO citas(cita_paciente, cita_medico, cita_fecha, cita_hora, cita_referencia) values('$this->cita_paciente','$this->cita_medico','$this->cita_fecha','$this->cita_hora','$this->cita_referencia')";
         $resultado = self::ejecutar($sql);
