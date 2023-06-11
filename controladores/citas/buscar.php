@@ -69,7 +69,7 @@ try {
                             <td><?= $cita['CITA_HORA'] ?></td>
                             <td><?= $cita['CITA_REFERENCIA'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_caaljuc/vistas/citas/modificar.php?cita_id=<?= $cita['CITA_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/citas/eliminar.php?cita_id=<?= $medico['CITA_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/citas/eliminar.php?cita_id=<?= $cita['CITA_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
