@@ -17,7 +17,7 @@ require_once '../../modelos/Medico.php';
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Formulario de ingreso de ventas</h1>
+        <h1 class="text-center">Formulario de ingreso de citas</h1>
         <div class="row justify-content-center">
             <form action="/final_caaljuc/controladores/citas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
