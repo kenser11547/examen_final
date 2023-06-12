@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require '../../modelos/Medico.php';
 require_once '../../modelos/Especialidad.php';
@@ -81,3 +83,4 @@ try {
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>

@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require '../../modelos/Medico.php';
 
@@ -58,3 +60,4 @@ if($_POST['medico_nombre'] != '' && $_POST['medico_especialidad']  != '' && $_PO
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>
