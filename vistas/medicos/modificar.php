@@ -32,7 +32,7 @@ require '../../modelos/Clinica.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_nombre">Nombre del medico</label>
-                        <input type="text" name="medico_nombre" id="medico_nombre" class="form-control" required>
+                        <input type="text" name="medico_nombre" id="medico_nombre" value="<?= $medicos[0]['MEDICO_NOMBRE'] ?>" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">

@@ -24,7 +24,7 @@ require '../../modelos/Paciente.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="paciente_nombre">Nombre del paciente</label>
-                        <input type="text" name="paciente_nombre" id="paciente_nombre" class="form-control" required>
+                        <input type="text" name="paciente_nombre" id="paciente_nombre" value="<?= $medicos[0]['PACIENTE_NOMBRE'] ?>" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
