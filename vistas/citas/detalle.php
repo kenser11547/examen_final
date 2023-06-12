@@ -32,7 +32,7 @@ require '../../modelos/Cita.php';
             <div class="col-lg-10 table-responsive">
                 <table class="table table-bordered custom-bordered-table">
                     <thead>
-                        <tr class="text-center table-dark">
+                        <tr class="text-center table-light">
                             <th colspan="6">HOSPITAL "LA ESPERANZA" CITAS</th>
                         </tr>
                     </thead>
@@ -47,10 +47,10 @@ require '../../modelos/Cita.php';
                                 <?php if ($key > 0): ?>
                                <?php endif; ?>
                                     <thead>
-                                        <tr class="text-center table-success">
+                                        <tr class="text-center table-primary">
                                             <th colspan="6">CLÍNICA: <?= $fila['CLINICA_NOMBRE'] ?> (<?= $fila['MEDICO_NOMBRE'] ?>)</th>
                                         </tr>
-                                        <tr class="text-center table-primary">
+                                        <tr class="text-center table-secondary">
                                             <th>NO</th>
                                             <th>PACIENTE</th>
                                             <th>DPI</th>
@@ -87,4 +87,4 @@ require '../../modelos/Cita.php';
         <div class="col-lg-12">
             <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-success">Regresar al formulario</a>
         </div>
-    </div></center>
+    </div></center><br><br>
