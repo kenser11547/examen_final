@@ -4,8 +4,10 @@ require '../../modelos/Especialidad.php';
 require '../../modelos/Clinica.php';
 
 
-    try {
-        $medico = new Medico($_GET);
+    try { if(isset($_GET['medico_id']) && $_GET['medico_id'] != ''){
+    
+        $medico_id = $_GET['medico_id'];
+        $medico = new Medico(["medico_id" => $medico_id]);
         $especialidad = new Especialidad($_GET);
         $clinica = new Clinica($_GET);
 
@@ -13,7 +15,7 @@ require '../../modelos/Clinica.php';
         $medicos = $medico->buscar();
         $especialidades = $especialidad->buscar();
         $clinicas = $clinica->buscar();
-      
+    }
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -26,7 +28,7 @@ require '../../modelos/Clinica.php';
         <h1 class="text-center">Modificar pacientes</h1>
         <div class="row justify-content-center">
             <form action="/final_caaljuc/controladores/medicos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="medico_id">
+                <input type="hidden" name="medico_id" value="<?= $medicos[0]['MEDICO_ID'] ?>">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_nombre">Nombre del medico</label>
