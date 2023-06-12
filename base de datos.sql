@@ -28,18 +28,18 @@ create table medicos(
     foreign key (medico_especialidad) REFERENCES especialidades (especialidad_id),
     foreign key (medico_clinica) REFERENCES clinicas (clinica_id)
 )
-create table citas(
-    cita_id serial not null,
-    cita_paciente integer not null,
-    cita_medico integer not null,
-    cita_fecha DATETIME YEAR TO MINUTE NOT NULL,
-    cita_hora DATETIME HOUR TO MINUTE NOT NULL,
-    cita_referencia varchar(5) not null,
-    cita_situacion smallint not null default 1,
-    primary key (cita_id),
-    foreign key (cita_paciente) REFERENCES pacientes (paciente_id),
-    foreign key (cita_medico) REFERENCES medicos (medico_id)
-)
+CREATE TABLE citas (
+    cita_id SERIAL NOT NULL,
+    cita_paciente INTEGER NOT NULL,
+    cita_medico INTEGER NOT NULL,
+    cita_fecha DATE NOT NULL,
+    cita_hora INTERVAL HOUR TO MINUTE NOT NULL,
+    cita_referencia VARCHAR(5) NOT NULL,
+    cita_situacion SMALLINT NOT NULL DEFAULT 1,
+    PRIMARY KEY (cita_id),
+    FOREIGN KEY (cita_paciente) REFERENCES pacientes (paciente_id),
+    FOREIGN KEY (cita_medico) REFERENCES medicos (medico_id)
+);
 create table recetas(
     receta_id serial not null,
     receta_cita integer not null,

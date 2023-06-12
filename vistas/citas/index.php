@@ -49,7 +49,7 @@ require_once '../../modelos/Medico.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="cita_fecha">Fecha de la cita</label>
-                        <input type="datetime-local" value="<?= date('Y-m-d\TH:i') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
+                        <input type="date" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

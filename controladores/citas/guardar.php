@@ -5,22 +5,26 @@ error_reporting(E_ALL);
 require '../../modelos/Cita.php';
 
 
+
 if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_fecha'] != '' && $_POST['cita_hora'] != '' && $_POST['cita_referencia'] != ''){
     
-    $fecha = $_POST['cita_fecha'];
+//    $_POST['cita_fecha']= '2/2/2023';
+
+
+$_POST['cita_fecha']= date('d/m/Y', strtotime($_POST['cita_fecha']));
 
 
     try {
         $cita = new Cita($_POST);
         // Formatear la fecha y hora en el formato correcto
-        $cita_fecha = date('Y-m-d H:i', strtotime($_POST['cita_fecha']));
+      
 
         // Asignar el valor formateado al campo cita_fecha
-        $cita->setCitaFecha($cita_fecha);
+
         $resultado = $cita->guardar();
         $citas = $cita->buscarPorFecha();
         $error = "NO se guardó correctamente";
-        echo "Fecha formateada: $cita_fecha";
+    //   echo "Fecha formateada: $cita_fecha";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){

@@ -6,8 +6,8 @@
             <form action="/final_caaljuc/controladores/citas/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cita_fecha">Fecha de la venta</label>
-                        <input type="date-local" value="<?= date('Y-m-d') ?>" name="cita_fecha" id="cita_fecha" class="form-control">
+                        <label for="venta_fecha">Fecha de la venta</label>
+                        <input type="date-local" value="<?= date('Y-m-d') ?>" name="venta_fecha" id="venta_fecha" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -19,3 +19,5 @@
         </div>
     </div>
     <?php include_once '../../includes/footer.php'?>
+
+

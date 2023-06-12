@@ -43,6 +43,7 @@ abstract class Conexion{
         // PREPARAMOS LA SENTENCIA
         $sentencia = self::$conexion->prepare($sql);
         // EJECUTAMOS A SENTENCIA
+   
         $sentencia->execute();
         $resultados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 

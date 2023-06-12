@@ -23,7 +23,7 @@ class Cita extends Conexion{
     }
 
         public function setCitaFecha($fecha) {
-            $this->cita_fecha = $fecha;
+            $sql = "SELECT * FROM citas where $this->cita_fecha = $fecha";
         }
     
         // Resto de métodos de la clase Cita...
@@ -70,5 +70,17 @@ class Cita extends Conexion{
         
         $resultado = self::ejecutar($sql);
         return $resultado;
+    }
+
+    public function busqueda(){
+        
+
+        $sql = " SELECT * FROM citas  inner join pacientes on paciente_id = cita_paciente 
+        inner join medicos on medico_id = cita_medico inner join clinicas on clinica_id = medico_clinica";
+
+
+        $resultado = self::servir($sql);
+        return $resultado;
+
     }
 }
