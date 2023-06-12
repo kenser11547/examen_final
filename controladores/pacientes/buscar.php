@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require '../../modelos/Paciente.php';
 try {
@@ -69,3 +71,4 @@ try {
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>

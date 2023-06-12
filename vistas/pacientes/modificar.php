@@ -12,6 +12,8 @@ require '../../modelos/Paciente.php';
     }
 ?>
 <?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
     <div class="container">
         <h1 class="text-center">Modificar pacientes</h1>
         <div class="row justify-content-center">

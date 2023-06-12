@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require '../../modelos/Paciente.php';
 
@@ -58,3 +60,4 @@ if($_POST['paciente_nombre'] != '' && $_POST['paciente_dpi']  != '' && $_POST['p
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>
