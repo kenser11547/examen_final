@@ -73,7 +73,7 @@ try {
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
-                            <tr>
+                            <tr class="text-center table-light">
                                 <td colspan="10">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif ?>
