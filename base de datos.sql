@@ -33,7 +33,7 @@ create table citas(
     cita_paciente integer not null,
     cita_medico integer not null,
     cita_fecha DATETIME YEAR TO MINUTE NOT NULL,
-    cita_hora TIME HOUR TO MINUTE NOT NULL,
+    cita_hora DATETIME HOUR TO MINUTE NOT NULL,
     cita_referencia varchar(5) not null,
     cita_situacion smallint not null default 1,
     primary key (cita_id),
