@@ -35,11 +35,11 @@ if($_POST['medico_nombre'] != '' && $_POST['medico_especialidad']  != '' && $_PO
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Resultados</title>
-</head>
+</head><br><center>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
                         Modificado exitosamente!
@@ -53,11 +53,11 @@ if($_POST['medico_nombre'] != '' && $_POST['medico_especialidad']  != '' && $_PO
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                 <a href="/final_caaljuc/controladores/medicos/buscar.php?medico_nombre=<?= $_POST['medico_nombre'] ?>" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
-</body>
+</body></center>
 </html>
 <?php include_once '../../includes/footer.php'?>
