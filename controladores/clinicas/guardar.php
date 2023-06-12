@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require '../../modelos/Clinica.php';
 
@@ -60,3 +62,4 @@ if($_POST['clinica_nombre'] != ''){
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>
