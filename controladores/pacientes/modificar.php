@@ -4,7 +4,7 @@
 require '../../modelos/Paciente.php';
 
 
-if($_POST['paciente_id'] != '' && $_POST['paciente_nombre'] != '' && $_POST['paciente_dpi']  != '' && $_POST['paciente_telefono']  != ''){
+if($_POST['paciente_nombre'] != '' && $_POST['paciente_dpi']  != '' && $_POST['paciente_telefono']  != '' &&$_POST['paciente_id'] != ''){
 
     try {
         $paciente = new Paciente($_POST);

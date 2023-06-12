@@ -17,7 +17,7 @@
         }
 
         .custom-bordered-table tr {
-            border: 2px solid white;
+            border: 2px solid black;
         }
 
         .custom-bordered-table th {
