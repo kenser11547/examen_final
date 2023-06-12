@@ -17,7 +17,7 @@ require '../../modelos/Paciente.php';
     <div class="container">
         <h1 class="text-center">Modificar pacientes</h1>
         <div class="row justify-content-center">
-            <form action="/final_caaljuc/controladores/pacientes/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/final_caaljuc/controladores/pacientes/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <input type="hidden" name="medico_id">
                 <div class="row mb-3">
                     <div class="col">
