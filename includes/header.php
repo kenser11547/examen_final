@@ -14,6 +14,7 @@
 
         .custom-bordered-table {
         border: 4px solid black;
+        box-shadow: -1px 2px 4px 4px blue;
         }
 
         .custom-bordered-table tr {
