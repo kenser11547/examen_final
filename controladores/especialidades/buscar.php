@@ -27,7 +27,7 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Resultados de busqueda</title>
 </head>
-<body>
+<body><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -42,7 +42,7 @@ try {
                     <tbody>
                         <?php if(count($especialidades) > 0):?>
                         <?php foreach($especialidades as $key => $especialidad) : ?>
-                        <tr>
+                        <tr class="text-center table-secondary">
                             <td><?= $key + 1 ?></td>
                             <td><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></td>
                             <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/especialidades/eliminar.php?especialidad_id=<?= $especialidad['ESPECIALIDAD_ID']?>">Eliminar</a></td>
