@@ -56,7 +56,7 @@ if($_POST['clinica_nombre'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="/final_caaljuc/vistas/clinicas/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/vistas/clinicas/index.php" class="btn btn-success">Regresar al formulario</a>
             </div>
         </div>
     </div>

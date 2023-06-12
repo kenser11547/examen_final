@@ -54,7 +54,7 @@ if($_POST['medico_nombre'] != '' && $_POST['medico_especialidad']  != '' && $_PO
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="/final_caaljuc/controladores/medicos/buscar.php?medico_nombre=<?= $_POST['medico_nombre'] ?>" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/controladores/medicos/buscar.php?medico_nombre=<?= $_POST['medico_nombre'] ?>" class="btn btn-success">Regresar al formulario</a>
             </div>
         </div>
     </div>

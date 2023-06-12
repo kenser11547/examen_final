@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 require '../../modelos/Cita.php';
 
 
@@ -58,7 +55,7 @@ $_POST['cita_fecha']= date('d/m/Y', strtotime($_POST['cita_fecha']));
         <div class="row">
             <div class="col-lg-12">
                 <?php if($resultado): ?>
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         Guardado exitosamente!
                     </div>
                 <?php else :?>
@@ -71,7 +68,7 @@ $_POST['cita_fecha']= date('d/m/Y', strtotime($_POST['cita_fecha']));
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/vistas/citas/index.php" class="btn btn-danger">Regresar al formulario</a>
             </div>
         </div>
     </div>

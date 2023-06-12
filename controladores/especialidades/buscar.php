@@ -59,7 +59,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/vistas/especialidades/buscar.php" class="btn btn-info w-100">Regresar a la busqueda</a>
+                <a href="/final_caaljuc/vistas/especialidades/buscar.php" class="btn btn-success w-100">Regresar a la busqueda</a>
             </div>
         </div>
     </div>

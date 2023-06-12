@@ -56,7 +56,7 @@ if($_POST['paciente_nombre'] != '' && $_POST['paciente_dpi'] != '' && $_POST['pa
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="/final_caaljuc/vistas/pacientes/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/final_caaljuc/vistas/pacientes/index.php" class="btn btn-danger">Regresar al formulario</a>
             </div>
         </div>
     </div>

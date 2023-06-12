@@ -62,7 +62,7 @@ try {
                             <td><?= $medico['MEDICO_NOMBRE'] ?></td>
                             <td><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></td>
                             <td><?= $clinica['CLINICA_NOMBRE'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_caaljuc/vistas/medicos/modificar.php?medico_id=<?= $medico['MEDICO_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-success w-100" href="/final_caaljuc/vistas/medicos/modificar.php?medico_id=<?= $medico['MEDICO_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_caaljuc/controladores/medicos/eliminar.php?medico_id=<?= $medico['MEDICO_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
@@ -77,7 +77,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_caaljuc/vistas/medicos/buscar.php" class="btn btn-info w-100">Regresar a la busqueda</a>
+                <a href="/final_caaljuc/vistas/medicos/buscar.php" class="btn btn-success w-100">Regresar a la busqueda</a>
             </div>
         </div>
     </div>
