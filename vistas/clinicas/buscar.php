@@ -12,7 +12,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-info w-100">Buscar</button>
+                        <button type="submit" class="btn btn-success w-100">Buscar</button>
                     </div>
                 </div>
             </form>

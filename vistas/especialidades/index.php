@@ -12,7 +12,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                        <button type="submit" class="btn btn-success w-100">Guardar</button>
                     </div>
                 </div>
             </form>
