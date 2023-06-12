@@ -28,7 +28,7 @@ require '../../modelos/Cita.php';
         $error = $e->getMessage();
     } 
 ?>
-<br><br>
+<br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 table-responsive">
@@ -49,7 +49,7 @@ require '../../modelos/Cita.php';
                                 <?php if ($key > 0): ?>
                                <?php endif; ?>
                                     <thead>
-                                        <tr class="text-center table-primary">
+                                        <tr class="text-center table-success">
                                             <th colspan="6">CLÍNICA: <?= $fila['CLINICA_NOMBRE'] ?> (<?= $fila['MEDICO_NOMBRE'] ?>)</th>
                                         </tr>
                                         <tr class="text-center table-primary">
