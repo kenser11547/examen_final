@@ -1,7 +1,7 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Buscar Medicos</h1>
+        <h1 class="text-center">Buscar Clinicas</h1>
         <div class="row justify-content-center">
             <form action="/final_caaljuc/controladores/clinicas/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">

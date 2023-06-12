@@ -1,10 +1,19 @@
 <?php
 require '../../modelos/Medico.php';
+require '../../modelos/Especialidad.php';
+require '../../modelos/Clinica.php';
+
+
     try {
         $medico = new Medico($_GET);
+        $especialidad = new Especialidad($_GET);
+        $clinica = new Clinica($_GET);
+
 
         $medicos = $medico->buscar();
-       
+        $especialidades = $especialidad->buscar();
+        $clinicas = $clinica->buscar();
+      
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -27,13 +36,23 @@ require '../../modelos/Medico.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_especialidad">Especialidad</label>
-                        <input type="text" name="medico_especialidad" id="medico_especialidad" class="form-control" required>
+                        <select name="medico_especialidad" id="medico_especialidad" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($especialidades as $key => $especialidad) : ?>
+                                <option value="<?= $especialidad['ESPECIALIDAD_ID'] ?>"><?= $especialidad['ESPECIALIDAD_NOMBRE'] ?></option>
+                            <?php endforeach?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="medico_clinica">Clinica</label>
-                        <input type="text" name="medico_clinica" id="medico_clinica" class="form-control" required>
+                        <select name="medico_clinica" id="medico_clinica" class="form-control">
+                            <option value="">SELECCIONE...</option>
+                            <?php foreach ($clinicas as $key => $clinica) : ?>
+                                <option value="<?= $clinica['CLINICA_ID'] ?>"><?= $clinica['CLINICA_NOMBRE'] ?></option>
+                            <?php endforeach?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
