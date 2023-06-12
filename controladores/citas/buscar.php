@@ -1,3 +1,5 @@
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <?php
 require_once '../../modelos/Cita.php';
 require_once '../../modelos/Paciente.php';
@@ -30,7 +32,7 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Resultados de búsqueda</title>
 </head>
-<body>
+<body> <br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -57,7 +59,7 @@ try {
                                     $paciente = $pacientes[$key];
                                     $medico = $medicos[$key];
                                 ?>
-                                <tr>
+                                <tr class="text-center table-light">
                                     <td><?= $key + 1 ?></td>
                                     <td><?= $paciente['PACIENTE_NOMBRE'] ?></td>
                                     <td><?= $paciente['PACIENTE_DPI'] ?></td>
@@ -88,3 +90,4 @@ try {
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>

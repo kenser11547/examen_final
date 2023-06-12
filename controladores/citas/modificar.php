@@ -25,6 +25,8 @@ if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_
 // }
 
 ?>
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,3 +60,4 @@ if($_POST['cita_paciente'] != '' && $_POST['cita_medico'] != '' && $_POST['cita_
     </div>
 </body>
 </html>
+<?php include_once '../../includes/footer.php'?>

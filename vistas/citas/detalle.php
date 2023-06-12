@@ -27,17 +27,18 @@ require '../../modelos/Cita.php';
     } 
 ?>
 <?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?><br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered custom-bordered-table">
                     <thead>
-                        <tr class="text-center table-dark">
+                        <tr class="text-center table-primary">
                             <th colspan="6">HOSPITAL "LA ESPERANZA" CITAS</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center table-dark">
+                        <tr class="text-center table-primary">
                             <td colspan="6"><center>CITAS PARA EL DIA DE HOY (<?= $fecha?>) </center></td>
                             
                         </tr>
@@ -45,21 +46,21 @@ require '../../modelos/Cita.php';
                         <tr class="text-center table-dark">
                             <td colspan="6"><?= $busqueda[1]['CLINICA_NOMBRE'] ?>(DOCTOR <?= $busqueda[1]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
-                        <tr>
+                        <tr class="text-center table-light">
                             <th>NO.</th>
                             <th>PACIENTE</th>
                             <th>DPI</th>
                             <th>TELEFONO</th>
                             <th>HORA DE LA CITA</th>
                             <th>REFERIDO SI / NO</th>
-                        </tr>
+                        </tr >
                         <?php if (!empty($busqueda) && count($busqueda) > 0) : ?>
                             <?php $citasEncontradas = false; ?>
                             <?php $key = 0; ?>
                             <?php foreach($busqueda as $key => $fila) : ?>
                                 <?php if ($fila['CITA_MEDICO'] == 1 && $fila['MEDICO_CLINICA'] = 1) : ?>
                                     <?php $citasEncontradas = true; ?>
-                                    <tr>
+                                    <tr class="text-center table-secondary">
                                         <td><?= $key + 1 ?></td>
                                         <td><?= $fila['PACIENTE_NOMBRE'] ?></td>
                                         <td><?= $fila['PACIENTE_DPI'] ?></td>
@@ -70,19 +71,19 @@ require '../../modelos/Cita.php';
                                 <?php endif ?>
                             <?php endforeach ?>
                             <?php if (!$citasEncontradas) : ?>
-                                <tr>
+                                <tr class="text-center table-secondary">
                                     <td colspan="6"><center>SIN CITAS</center></td>
                                 </tr>
                             <?php endif ?>
                         <?php else : ?>
-                            <tr>
+                            <tr class="text-center table-secondary">
                                 <td colspan="6"><center>SIN CITAS</center></td>
                             </tr>
                         <?php endif ?>
                         <tr class="text-center table-dark">
                             <td colspan="6"><?= $busqueda[3]['CLINICA_NOMBRE'] ?>(DOCTOR <?= $busqueda[3]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
-                        <tr>
+                        <tr class="text-center table-light">
                             <th>NO.</th>
                             <th>PACIENTE</th>
                             <th>DPI</th>
@@ -96,7 +97,7 @@ require '../../modelos/Cita.php';
                             <?php foreach($busqueda as $key => $fila) : ?>
                                 <?php if ($fila['CITA_MEDICO'] == 2 && $fila['MEDICO_CLINICA'] = 2) : ?>
                                     <?php $citasEncontradas = true; ?>
-                                    <tr>
+                                    <tr class="text-center table-secondary">
                                         <td><?= $key + 1 ?></td>
                                         <td><?= $fila['PACIENTE_NOMBRE'] ?></td>
                                         <td><?= $fila['PACIENTE_DPI'] ?></td>
@@ -107,19 +108,19 @@ require '../../modelos/Cita.php';
                                 <?php endif ?>
                             <?php endforeach ?>
                             <?php if (!$citasEncontradas) : ?>
-                                <tr>
+                                <tr class="text-center table-secondary">
                                     <td colspan="6"><center>SIN CITAS</center></td>
                                 </tr>
                             <?php endif ?>
                         <?php else : ?>
-                            <tr>
+                            <tr class="text-center table-secondary">
                                 <td colspan="6"><center>SIN CITAS</center></td>
                             </tr>
                         <?php endif ?>
                         <tr class="text-center table-dark">
                             <td colspan="6"><?= $busqueda[4]['CLINICA_NOMBRE'] ?>(DOCTOR <?= $busqueda[4]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
-                        <tr>
+                        <tr class="text-center table-light">
                             <th>NO.</th>
                             <th>PACIENTE</th>
                             <th>DPI</th>
@@ -128,12 +129,13 @@ require '../../modelos/Cita.php';
                             <th>REFERIDO SI / NO</th>
                         </tr>
                         <?php if (!empty($busqueda) && count($busqueda) > 0) : ?>
+                            
                             <?php $citasEncontradas = false; ?>
                             <?php $key = 0; ?>
                             <?php foreach($busqueda as $key => $fila) : ?>
                                 <?php if ($fila['CITA_MEDICO'] == 3 && $fila['MEDICO_CLINICA'] = 3) : ?>
                                     <?php $citasEncontradas = true; ?>
-                                    <tr>
+                                    <tr class="text-center table-secondary">
                                         <td><?= $key + 1 ?></td>
                                         <td><?= $fila['PACIENTE_NOMBRE'] ?></td>
                                         <td><?= $fila['PACIENTE_DPI'] ?></td>
@@ -144,19 +146,19 @@ require '../../modelos/Cita.php';
                                 <?php endif ?>
                             <?php endforeach ?>
                             <?php if (!$citasEncontradas) : ?>
-                                <tr>
+                                <tr class="text-center table-secondary">
                                     <td colspan="6"><center>SIN CITAS</center></td>
                                 </tr>
                             <?php endif ?>
                         <?php else : ?>
-                            <tr>
+                            <tr class="text-center table-secondary">
                                 <td colspan="6"><center>SIN CITAS</center></td>
                             </tr>
                         <?php endif ?>
                         <tr class="text-center table-dark">
-                            <td colspan="6"><?= $busqueda[5]['CLINICA_NOMBRE'] ?>(<?= $busqueda[5]['MEDICO_NOMBRE'] ?>)</td>
+                            <td colspan="6"><?= $busqueda[11]['CLINICA_NOMBRE'] ?>(DOCTOR <?= $busqueda[11]['MEDICO_NOMBRE'] ?>)</td>
                         </tr>
-                        <tr>
+                        <tr class="text-center table-light">
                             <th>NO.</th>
                             <th>PACIENTE</th>
                             <th>DPI</th>
@@ -168,9 +170,9 @@ require '../../modelos/Cita.php';
                             <?php $citasEncontradas = false; ?>
                             <?php $key = 0; ?>
                             <?php foreach($busqueda as $key => $fila) : ?>
-                                <?php if ($fila['CITA_MEDICO'] == 5 && $fila['MEDICO_CLINICA'] = 5) : ?>
+                                <?php if ($fila['CITA_MEDICO'] == 4 && $fila['MEDICO_CLINICA'] = 4) : ?>
                                     <?php $citasEncontradas = true; ?>
-                                    <tr>
+                                    <tr class="text-center table-secondary">
                                         <td><?= $key + 1 ?></td>
                                         <td><?= $fila['PACIENTE_NOMBRE'] ?></td>
                                         <td><?= $fila['PACIENTE_DPI'] ?></td>
@@ -181,15 +183,16 @@ require '../../modelos/Cita.php';
                                 <?php endif ?>
                             <?php endforeach ?>
                             <?php if (!$citasEncontradas) : ?>
-                                <tr>
+                                <tr class="text-center table-secondary">
                                     <td colspan="6"><center>SIN CITAS</center></td>
                                 </tr>
                             <?php endif ?>
                         <?php else : ?>
-                            <tr>
+                            <tr class="text-center table-secondary">
                                 <td colspan="6"><center>SIN CITAS</center></td>
                             </tr>
                         <?php endif ?>
+                        
                     </tbody>
                 </table>
             </div>
